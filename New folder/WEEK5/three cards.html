@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Market Divisions</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:lightgrey;
+        }
+
+        .card-container{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card{
+            background-color: white;
+            width: 260px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .card img{
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content{
+            padding: 15px;
+        }
+
+        .card h2{
+            margin: 10px 0;
+        }
+
+        .card p{
+            font-size: 14px;
+            color: gray;
+        }
+
+        .card button{
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background-color:blue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .card button:hover{
+            background-color:blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="C:\Users\HP\OneDrive\New folder\.vscode\primary.webp">
+            <div class="card-content">
+                <h2>Primary Market</h2>
+                <p>Primary Market is the market where companies issue new shares to the public for the first time.
+Investors buy shares directly from the company, usually through an IPO.
+ </p>
+                <button>Read More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="C:\Users\HP\OneDrive\New folder\.vscode\secondary market.avif">
+            <div class="card-content">
+                <h2>Secondary Market</h2>
+                <p>The Secondary Market is where investors buy and sell existing shares among themselves.
+Companies do not receive money from these transactions.
+</p>
+                <button>Read More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="C:\Users\HP\OneDrive\New folder\.vscode\derivatives market.jpg">
+            <div class="card-content">
+                <h2>Derivatives Market</h2>
+                <p>The Derivatives Market is where financial contracts are traded based on underlying assets like stocks.
+It includes instruments such as futures and options used for hedging or speculation.
+</p>
+                <button>Read More</button>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
