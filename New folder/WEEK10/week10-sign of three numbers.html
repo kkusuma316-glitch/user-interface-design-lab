@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>checking sign of product of three numbers</h1>
+
+<button onclick="checkSign()">Check Sign</button>
+
+<script>
+function checkSign() {
+    let a = 3, b = -7, c = 2;
+    let product = a * b * c;
+
+    if (product > 0) {
+        alert("The sign is plus (+)");
+    } else if (product < 0) {
+        alert("The sign is minus (-)");
+    } else {
+        alert("The product is zero");
+    }
+}
+</script>
+
+</body>
+</html>

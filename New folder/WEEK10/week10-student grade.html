@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Grade Calculator</h1>
+<button onclick="calculateGrade()">Calculate Grade</button>
+<script>
+function calculateGrade() {
+    let marks = [70, 65, 80, 75, 60, 85];
+
+    let sum = 0;
+    for (let i = 0; i < marks.length; i++) {
+        sum += marks[i];
+    }
+
+    let avg = sum / marks.length;
+    let grade;
+
+    if (avg < 60) {
+        grade = "F";
+    } else if (avg < 70) {
+        grade = "D";
+    } else if (avg < 80) {
+        grade = "C";
+    } else if (avg < 90) {
+        grade = "B";
+    } else {
+        grade = "A";
+    }
+
+    alert("Average: " + avg + "\nGrade: " + grade);
+}
+</script>
+</body>
+</html>

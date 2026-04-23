@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+     <h1>checking if the numbers are even or odd</h1>
+
+<button onclick="checkOddEven()">Check Odd/Even</button>
+
+<script>
+function checkOddEven() {
+    let result = "";
+
+    for (let i = 0; i <= 15; i++) {
+        if (i % 2 === 0) {
+            result += i + " is even\n";
+        } else {
+            result += i + " is odd\n";
+        }
+    }
+
+    alert(result);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Sorting numbers</h1>
+
+<button onclick="sortNumbers()">Sort Numbers</button>
+
+<script>
+function sortNumbers() {
+    let a = 0, b = -1, c = 4;
+    let arr = [a, b, c];
+
+    arr.sort(function(x, y) {
+        return y - x;
+    });
+
+    alert("Sorted numbers: " + arr);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Largest of five numbers</h1>
+    <button onclick="findLargest()">Find Largest</button>
+<script>
+function findLargest() {
+    let nums = [-5, -2, -6, 0, -1];
+    let largest = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] > largest) {
+            largest = nums[i];
+        }
+    }
+
+    alert("Largest number is: " + largest);
+}
+</script>
+
+</body>
+</html>
