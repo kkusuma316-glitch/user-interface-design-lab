@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Programs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: white;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            margin: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .button-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            width: 80%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4facfe;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #007bff;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Checker Web App</h1>
+
+    <div class="container">
+        <input type="number" id="num" placeholder="Enter a number">
+        <div class="button-column">
+            <button onclick="checkEven()">Even</button>
+            <button onclick="checkOdd()">Odd</button>
+            <button onclick="checkPrime()">Prime</button>
+            <button onclick="findFactorial()">Factorial</button>
+            <button onclick="checkArmstrong()">Armstrong</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+<script>
+    function getNumber() {
+        return parseInt(document.getElementById("num").value);
+    }
+
+    function display(result) {
+        document.getElementById("output").innerText = result;
+    }
+
+    function checkEven() {
+        let n = getNumber();
+        if (n % 2 === 0)
+            display(n + " is EVEN");
+        else
+            display(n + " is NOT EVEN");
+    }
+
+    function checkOdd() {
+        let n = getNumber();
+        if (n % 2 !== 0)
+            display(n + " is ODD");
+        else
+            display(n + " is NOT ODD");
+    }
+
+    function checkPrime() {
+        let n = getNumber();
+        if (n < 2) {
+            display(n + " is NOT PRIME");
+            return;
+        }
+
+        for (let i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
+                display(n + " is NOT PRIME");
+                return;
+            }
+        }
+        display(n + " is PRIME");
+    }
+
+    function findFactorial() {
+        let n = getNumber();
+        if (n < 0) {
+            display("Factorial not defined for negative numbers");
+            return;
+        }
+
+        let fact = 1;
+        for (let i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        display("Factorial of " + n + " is " + fact);
+    }
+
+    function checkArmstrong() {
+        let n = getNumber();
+        let temp = n;
+        let sum = 0;
+        let digits = n.toString().length;
+
+        while (temp > 0) {
+            let digit = temp % 10;
+            sum += Math.pow(digit, digits);
+            temp = Math.floor(temp / 10);
+        }
+
+        if (sum === n)
+            display(n + " is an ARMSTRONG number");
+        else
+            display(n + " is NOT an ARMSTRONG number");
+    }
+</script>
+</body>
+</html>
