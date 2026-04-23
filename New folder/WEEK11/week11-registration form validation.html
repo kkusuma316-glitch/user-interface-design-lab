@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form onsubmit="return validateForm()">
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    <p id="message"></p>
+    <button type="submit">Register</button>
+</form>
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let message = document.getElementById("message");
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (name === "") {
+        message.innerHTML = "Name cannot be empty";
+        message.style.color = "red";
+        return false;
+    }
+    if (!pattern.test(email)) {
+        message.innerHTML = "Enter a valid email";
+        message.style.color = "red";
+        return false;
+    }
+    if (password.length < 6) {
+        message.innerHTML = "Password must be at least 6 characters";
+        message.style.color = "red";
+        return false;
+    }
+    message.innerHTML = "Registration successful!";
+    message.style.color = "green";
+    return true;
+}
+</script>
+</body>
+</html>

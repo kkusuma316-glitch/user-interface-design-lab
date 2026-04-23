@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Number Validation</title>
+</head>
+<body>
+<h2>Enter Mobile Number</h2>
+<input type="text" id="mobile" onblur="validateMobile()" placeholder="Enter 10-digit number">
+<p id="message"></p>
+<script>
+function validateMobile() {
+    let mobile = document.getElementById("mobile").value;
+    let message = document.getElementById("message");
+    let pattern = /^[0-9]{10}$/;
+    if (!pattern.test(mobile)) {
+        message.innerHTML = "Mobile number must be exactly 10 digits";
+        message.style.color = "red";
+    } else {
+        message.innerHTML = "Valid mobile number";
+        message.style.color = "green";
+    }
+}
+</script>
+</body>
+</html>
